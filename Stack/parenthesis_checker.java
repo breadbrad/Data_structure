@@ -2,23 +2,23 @@ import java.util.Stack;
 import java.util.EmptyStackException;
 import javax.swing.JOptionPane;
 
-public class ParenChecker {
+class ParenChecker {
 	// Constants 
 	/** Set of closing, opening parenthesis. */
 	private static final String OPEN = "([{";
 	private static final String CLOSE = ")]}";
 	
 	public static boolean isBalanced(String input) {
-		Stack <Character> sk = new Stack <Character> ();
+		Stack <Character> st = new Stack <Character> ();
 		boolean balanced = true;
 		try {
 			int index = 0;
 			while (balanced && index < input.length()) {
 				char next = input.charAt(index);
 				if (isOpen(next)) {
-					s.push(next);
+					st.push(next);
 				} else if (isClose(next)) {
-					char top = s.pop();
+					char top = st.pop();
 					balanced = OPEN.indexOf(top) == CLOSE.indexOf(next);
 				}
 				index++;
@@ -26,7 +26,7 @@ public class ParenChecker {
 		} catch (EmptyStackException ex) {
 			balanced = false;
 		}
-		return (balanced && s.empty());
+		return (balanced && st.empty());
 	}
 
 	private static boolean isOpen(char ch) {
@@ -39,7 +39,7 @@ public class ParenChecker {
 
 	public static void main(String[] args) {
 		String input = JOptionPane.showInputDialog("Enter an expression containing parentheses");
-		if(ParenChecker.isBalanced(expression)) {
+		if(ParenChecker.isBalanced(input)) {
 			JOptionPane.showMessageDialog(null, input + "is balanced");
 		} else {
 			JOptionPane.showMessageDialog(null, input + "is not balanced");
