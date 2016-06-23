@@ -1,1 +1,4 @@
 Coding practice & data structure study 
+
+Usage (in terminal) $ javac [java_source_file]
+                    $ java [class Name w/o .class extension] 
