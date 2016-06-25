@@ -1,5 +1,5 @@
 import java.util.*;
-
+import javax.swing.JOptionPane;
 
 class postfixCalculator {
 	/** class for reporting a syntax error */
@@ -64,4 +64,11 @@ class postfixCalculator {
 			throw new SyntaxErrorException("It attempts to pop the empty stack .. ");
 		}
 	}
+	public static void main(String[] args) throws SyntaxErrorException {
+        String input = JOptionPane.showInputDialog("Enter an postfix expression");
+        postfixCalculator example = new postfixCalculator();     
+       	int output = example.cal(input);
+      	JOptionPane.showMessageDialog(null, "Processed input is : " + output);     
+        System.exit(0);
+    }
 }
