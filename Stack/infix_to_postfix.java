@@ -95,4 +95,16 @@ public class infix_to_postfix {
       	JOptionPane.showMessageDialog(null, "Processed input is : " + output);     
         System.exit(0);
     }
+    /** second version of main method 
+    	infix_to_postfix example = new infix_to_postfix(); 
+    	String infix = JOptionPane.showInputDialog("Enter an infix expression");
+    	try {
+    		String postfix = example.convert(infix);
+
+    	}
+    	catch (SyntaxErrorException e) {
+			JOptionPane.showMessageDiglog(null, e.getMessage());
+    	}
+    	System.exit(0);
+    	*/
 }
