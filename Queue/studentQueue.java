@@ -9,6 +9,7 @@
 	peek / element -> both return the element at the front w/o removing it
 	element -> throws an exception 
 	*/
+	
 import java.util.*;
 import javax.swing.JOptionPane;
 
@@ -17,7 +18,7 @@ class studentQueue {
 	/**Constructor for queue */
 	public studentQueue() {
 		students = new LinkedList <String>(); 
-	}  
+	}
 
 	public void populateQueue(){ 
 		int optionNum = 0;
@@ -50,13 +51,13 @@ class studentQueue {
 					for (String names : students) {
 						if (!names.equals(name)){
 							countPosition++;
-						} else {
-							JOptionPane.showMessageDialog(null, "student name '" + name + "' is at " + countPosition);
-							break;
-							}}
+							} else {
+								JOptionPane.showMessageDialog(null, "student name '" + name + "' is at " + countPosition);
+								break;
+								}
+						}
 							if(countPosition == students.size())
 								JOptionPane.showMessageDialog(null, name + " was not found..");		
-							
 							break;
 				case 5 : 
 					JOptionPane.showMessageDialog(null, "The number of students is " + students.size());
