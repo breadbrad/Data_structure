@@ -14,29 +14,29 @@
 
 import java.util.*;
 
-public class ListQueue <E> extends AbstractQueue <E> implements Queue <E> {
+public class ListQueue <T> extends AbstractQueue <T> implements Queue <T> {
 	// Reference to the front node 
-	private Node <E> front; 
+	private Node <T> front; 
 	// Reference to the rear node 
-	private Node <E> rear; 
+	private Node <T> rear; 
 	// The size of a queue 
 	private int size; 
 
- 	public boolean offer (E item) {
+ 	public boolean offer (T item) {
  		// checking empty queue 
  		if(front == null) {
- 			rear = new Node <E> (item);
+ 			rear = new Node <T> (item);
  			front = rear; 
  		} else {
- 			rear.next = new Node <E> (item);
+ 			rear.next = new Node <T> (item);
  			rear = rear.next;
  		} 
  		size++;
  		return true;		
  	}
 
- 	public E poll() {
- 		E item = peek();
+ 	public T poll() {
+ 		T item = peek();
  		// if it is null, returns null
  		if(item == null) 
  			return null;
@@ -46,7 +46,7 @@ public class ListQueue <E> extends AbstractQueue <E> implements Queue <E> {
  		return item;
  	}	
 
- 	public E peek() {
+ 	public T peek() {
  		if (size == 0)
  			return null;
  		else 
