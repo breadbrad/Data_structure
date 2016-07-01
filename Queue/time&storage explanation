@@ -1,0 +1,11 @@
+# Queue interface 
+- Computation time 
+# all operations -> O(1) 
+# reallocation an array -> O(n) (amortized over n items, O(1) per item) 
+
+- Storage requirements
+# linked-list (single & double) implementations require more storage due to references 
+# single -> 2 refs (data & link) , double -> 3 refs (data & 2 links) 
+# double-linked list -> requires 1.5 times the storage of single-linked list 
+# circular array -> requires the half size of single-linked list for storing same number of elements 
+# if the array were reallocated, it would require the same storage as a single-linked list (half the array would be empty) 
