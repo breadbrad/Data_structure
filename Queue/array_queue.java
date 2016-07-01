@@ -84,4 +84,13 @@ public class ArrayQueue <T> extends AbstractQueue <T> impelemnts Queue <T> {
 		capacity = newCapacity;
 		theData = newData;
 	}	
+	// incorrect use of Arrays.copyOf 
+	/** private void reallocate() {
+		capacity *= 2;
+		theData = Arrays.copyOf(theData, capacity);
+	}
+	--> theData[0] followed by the last element -> it doesn't follow the last position of element
+
+	*/
+
 }
