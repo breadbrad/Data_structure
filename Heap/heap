@@ -1,0 +1,48 @@
+// Heap is a complete binary tree 
+// at each level of a heap, the value in a node is less than all values 
+// in its two subtrees 
+
+//Removal -> from the top 
+// top item -> replaced with the last item (lower right-hand position)
+// to maintain complete tree 
+
+Algorithm for removal from a heap
+1. Remove the item in the root node by replacing it with the last item in the heap(LIH)
+2. while the item in the root node by replacing it with the last item in the heap(LIH)
+3.      swap item LIH with its smaller child, moving LIH down the heap
+
+
+Insertion of an element into a heap implementation as an ArrayList
+
+1. Insert the new element at the end of the ArrayList and set child to table.size() - 1
+2. Set parent (child - 1) / 2
+3. while (parent >= 0 and table[parent] > table[child])
+4.              Swap table[parent] and table[child]
+5.              Set child equal to parent 
+6.              Set parent equal to (child - 1) / 2 
+
+
+Removing an element     
+1. Remove the last element and set the item at 0 to this value 
+2. Set parent to 0
+3. while (true)
+4.      Set leftChild to (2 * parent) + 1 and rightChild to leftChild + 1
+5.      if leftChild >= table.size()
+6.              Break out of loop
+7.      Assume minChild is leftChild
+8.      if rightChild < table.size() and table[rightChild] < table[leftChild]
+9.              Set minChild to rightChild
+10.     if table[parent] > table[minChild]
+                Swap table[parent] and table[minChild]
+                Set parent to minChild
+        else
+                Break out of loop
+
+//Performance of the Heap
+remove -> traces a path from the root to a leaf 
+insert -> traces a path from a leaf to the root
+--> requires at most h(height)  steps
+
+The tree of height h has 2^h - 1 nodes 
+
+insert , remove -> O(log n) {n is the number of items in the heap} 
