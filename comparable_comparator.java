@@ -47,7 +47,6 @@ class Dog implements Comparator<Dog>, Comparable<Dog> {
 
 		/** compare() in Comparator<T>
                     Usage : Collections.sort(list, Comparator) */	
-		// compare() in Comparator<T>  
 		Collections.sort(list, new Dog());
                 System.out.println(" ");
 		for(Dog a: list) 
