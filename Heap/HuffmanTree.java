@@ -48,6 +48,45 @@ public class HuffmanTree implements Serializable {
                         double wr = treeRight.getData().weight;
                         HuffData sum = new HuffData(wl+wr, null);
                         BinaryTree<HuffData> newTree = new BinaryTree<HuffData> (sum, left, right) 
+                        theQueue.offer(newTree);
+                }
+
+                huffTree = theQueue.poll();
+        }
+
+        private void printCode(PriorityQueue out, String code, BinaryTree<HuffData> tree) {
+                HuffData theData - tree.getData();
+                if (theData.symbol != null) {
+                        if(theData.symbol.equals(" ")) {
+                        out.println("space: " + space);
+                        } else { 
+                                out.println(theData.symbol + ": " + code);
+                        }
+                } else {
+                        printCode(out, code + "0", tree.getLeftSubtree());
+                        printCode(out, code + "1", tree.getRightSubtree());
+                }
+        }
+        
+        public String decode(String codeMessage) {
+                StringBuilder result = new StringBuilder();
+                BinaryTree<HuffData> currentTree = huffTree;
+                for (int i = 0; i < codeMessage.length(); i++) {
+                        if (codeMessage.charAt(i) == '1') {
+                                currentTree = currentTree.getRightSubtree();
+                        } else {
+                                currentTree = currentTree.getLeftSubtree();
+                        } if (currentTree.isLeaf()) {
+                                HuffData theData = currentTree.getData();
+                                result.append(theData.symbol);
+                                currentTree = huffTree;
+                        }
+                }
+                return result.toString();
+        }
+}
+        
+
 
 
 
