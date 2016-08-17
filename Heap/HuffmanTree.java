@@ -55,7 +55,7 @@ public class HuffmanTree implements Serializable {
         }
 
         private void printCode(PriorityQueue out, String code, BinaryTree<HuffData> tree) {
-                HuffData theData - tree.getData();
+                HuffData theData = tree.getData();
                 if (theData.symbol != null) {
                         if(theData.symbol.equals(" ")) {
                         out.println("space: " + space);
