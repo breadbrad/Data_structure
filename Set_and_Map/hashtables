@@ -1,0 +1,92 @@
+Open addressing -> each hash table element(type Object) references a single key-value pair 
+
+Algorithm for accessing an item in a hash table
+
+ Compute the index by taking the item's hashcode() % table.length 
+ if table[index] is null
+      the item is not in the table
+ else if table[index] is equal to the item 
+      the item is in the table 
+ else 
+      Continue to search the table by incrementing the index until either the item is found or a null entry is found 
+
+Reducing collisions by expanding the table size 
+1st step : use a prime number for the size of the table (the probabiliy of a collision is proportional to how full the table is)
+
+--> need rehashing 
+1. Allocate a new hash table with twice the capacity of the original
+2. Reinsert each old table entry that has not deleted into the new hash table
+3. Reference the new table instead of the original 
+
+
+linear probing --> tends to form clusters of keys in the table 
+==> quadratic probing 
+probeNum++;
+index = (startIndex + probeNum * probeNum) % table.length
+
+quadratic probing --> next index calculation is a bit time consuming 
+==> efficient way 
+k += 2
+index = (index + k) % table.length;
+n^2 = 1 + 3 + 5 + . . . + 2n-1 
+
+quadratic probig --> not all table elements are examined when looking for an insertion index. 
+
+###########
+Chaining (bucket hashing)
+==> only items that have the same value for hashCode() % table.length 
+        will be examined 
+==> be able to store more elements in the table than the number of table slots(indexes)
+
+###################
+Performance of hash tables (Open addrssing vs Chaining) 
+load factor = the number of filled cells / table size 
+"the lower the load factor, the better the performance"
+
+expected number of comparisons = c
+load factor = L 
+
+** Open addressing 
+c = 0.5 * ( 1 + 1/(1 - L) ) 
+
+** Chaining 
+c = 1 + 0.5 * L 
+
+
+if L is 0.5 (half full), *Number of Probes* -- Linear_probing = 1.5; Chaining = 1.25
+if L is 0.95 (95% full), *Number of Probes* -- Linear_probing = 10.5; Chaining = 1.48 
+
+
+#######
+perfornace of hashing -> preferable to that of BST (if L is less than 0.75) 
+tradeoff -> the lower the L, the more unfilled storage cells 
+
+more storage would be required for a BST (item, leftsub, rightsub) 
+
+example 
+
+if 60,000 items (use open addressing) 
+-> need a table size of 80,000 (in order to have a L of 0.75) 
+c = 0.5 *( 1 + 1/(1 - '0.75'))
+c = 2.5
+
+for the case of chaining 
+
+2.5 = 1 + 0.5 * L 
+L = 3.0
+Load_factor(3) = 60,000 / n 
+n = 20,000
+
+it requires storage space for 20,000 references to lists. 
+
+60,000 nodes in the table (one for each item) 
+if we use linked list of nodes, 
+total storage = 20,000 (table reference ) + 60,000 * 2 (2 references per node) 
+              = 140,000
+
+
+
+
+
+
+
