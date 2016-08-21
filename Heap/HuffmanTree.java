@@ -18,7 +18,7 @@ public class HuffmanTree implements Serializable {
         private BinaryTree<HuffData> huffTree;
 
         // BinaryTree class does not implement Comparable 
-        // -> Comparator needs to be defined (compare() for comparing two BinaryTree<HuffData> objects
+    u   // -> Comparator needs to be defined (compare() for comparing two BinaryTree<HuffData> objects
 
         /** A Comparator for Huffman trees; nested class*/
         private static class CompareHuffmaTrees implements Comparator<BinaryTree<HuffData>> {
@@ -86,7 +86,3 @@ public class HuffmanTree implements Serializable {
         }
 }
         
-
-
-
-
