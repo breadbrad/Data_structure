@@ -1,0 +1,7 @@
+In java, an exchange requires your computer to swtich two object references 
+using a third object reference an an intermediary 
+
+A comparison requires your computer to execute a compareTo method.
+-> it will probably be more costly than an exchange because of the overhead to call and
+execute method compareTo. 
+
