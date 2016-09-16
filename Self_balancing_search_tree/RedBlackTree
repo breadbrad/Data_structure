@@ -1,0 +1,43 @@
+/**
+Invariants ;
+1; A node is either red or black
+2; The root is always black
+3; A red node always has black children
+( A null reference is considered to refer to a black node)
+4; The number of black nodes in any path from the root to a leaf is the same
+
+Insertion into a Red-Black Tree
+- When a leaf is found, the new item is inserted (with the color red [invariant 4])
+
+*/
+
+// Red-black tree insertion (recursive)
+
+
+1. if the root is null 
+2.      Insert a new Red-Black node and color it black
+3.      Return true
+4. else if the item is equal
+5.      The item is already in the tree; return false 
+6. else if the item is less than root.data
+7.      if the left subtree is null
+8.              Insert a new Red-Black node as the new subtree and color it red.
+9.              Return true
+10.     else
+11.             if both te left child and the right child are red
+12.                     Change the color of the children to black and change local root to red
+13.             Recursively insert the item into thet left subtree. 
+14.             if the left child is now red
+15.                     if the left grandchild is now red (grandchild is an "outside" node)
+16.                             Change the color of the left child to black 
+                                and change the local root to red 
+17.                             Rotate the local root right.
+18.                     else if the right grandchild is now red (grandchild is an "inside" node)
+19.                             Rotate the left child left.
+20.                             Change the color of the left child to black and
+                                change the local root to red
+21.                             Rotate the local root right.
+22. else
+23.     Item is greater than root.data; process is symmetric 
+24. if the root is the root of the tree
+25.     Force its color to be black 

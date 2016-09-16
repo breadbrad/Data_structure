@@ -1,0 +1,10 @@
+- Each non-leaf can have 2 or 3 children
+  => Height of tree 'h' is lg3(n) - O(1) <= h <= lg2(n) + O(1)
+
+- Each node can have 1 or 2 keys (respectively)
+
+- Every leaf will be at the same level of the tree 
+  => Root moves up, rather than leaves moving down.
+
+- Theta(lg n) insertion and search 
+

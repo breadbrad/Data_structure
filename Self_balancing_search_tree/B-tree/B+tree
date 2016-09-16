@@ -1,0 +1,9 @@
+the item deleted must be replaced by its inorder prdecessor 
+
+B+ tree 
+-> it was developed to reduce this wasted space.
+In the B+ tree, the leaves contain the keys and pointers to the corresponding values.
+The internal nodes only contain keys and pointers to children.
+There are 'order' pointers to children and 'order-1' values 
+
+

@@ -1,0 +1,25 @@
+if the root is null
+        Create a new 2-node that contains the new item.
+else if the item is in the local root.
+        Return false.
+else if the local root is a leaf
+        if the local root is a 2-node
+                Expand the 2-node to a 3-node and insert the item.
+        else 
+                Split the 2-node (creating two 2-nodes) and pass the new parent
+                and right child back up the recursion chain.
+else 
+        if the item is less than the smaller item in the local root
+                Recursively insert into the left child.
+        else if the local root is a 2-node
+                Recursively insert into the middle child.
+        else 
+                Recursively insert into the right child.
+        if a new parent was passed up from the previous level of recursion
+                if the new parent will be the tree root
+                        Create a 2-node whose data item is the passed-up parent,
+                        left child is the old root, and right child is the passed-up child. 
+                else 
+                        Recursively insert the new parent at the local root.
+Return true. 
+        

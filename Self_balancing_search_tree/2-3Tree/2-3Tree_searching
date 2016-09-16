@@ -1,0 +1,21 @@
+if the local root is null
+        Return null; the item is not in the tree.
+else if this is a 2-node
+        if the item is equal to the data1 field
+                Return the data1 field.
+        else if the item is less than the data1 field
+                Recursively search the left subtree.
+        else 
+                Recursively search the right subtree.
+else // This is a 3-node
+        if the item is equal to the data1 field
+                Return the data1 field
+        else if the item is equal to the data2 field
+                Return the data2 field.
+        else if the item is less than the data1 field
+                Recursively search the left subtree.
+        else if the item is less than the data2 field
+                Recursively search the middle subtree.
+        else 
+                Recursively search the right subtree.
+        

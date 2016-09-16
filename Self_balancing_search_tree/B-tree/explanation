@@ -1,0 +1,21 @@
+Disk speed 
+Disks are slow, with two different performance measures 
+- Latency (seek time): how long to get your first bit of data
+- Throughput (transfer rate): how quick once started
+- Current latency : 5 ms
+- Current throughput : migh get 1/2 MB in 5 ms
+- For 5 ms, we get a few bytes of data
+- For 10 ms, we get 1/2 MB
+- Read disks in pages/blocks 
+
+Organize data within the tree to corresspond to patge on disk
+- Read one disk page (one tree node) at a time
+- Maximum degree chosen depends on itmes being stored, disk characteristics
+- If we read 1000 keys, but only look at 10, is that good?
+
+Rules 
+- Non-root: t-1 to 2t-1 keys
+- Root: 1 to 2t-1 keys
+- Non-leaves: one more children than keys
+- Leaves: all at same level
+

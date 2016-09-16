@@ -1,3 +1,4 @@
+
 // Critical unbalancing
 // maintaining overall balance of a bst
 // Left-Left : Rotate right around parent 
@@ -44,6 +45,14 @@ private static class AVLNode<E> extends Node<E> {
                 }
                 return (AVLNode<E>) rotateRight(localRoot);
         }
+        private void decrementBalance (AVLNode<E> node) {
+                node.balance--;
+                if (node.balance == AVLNode.BALANCED) {
+                        increase = false;
+                }
+        }
+}
+
 
 
 
