@@ -1,0 +1,12 @@
+The level of a skip-list is defined as its highest node level
+
+Searching 
+Let m be the higest-level node
+while m > 0
+        Following the level-m links, find the node with the largestvalue that is less than or equal to the target. 
+        If it is equal to the target, the target has been found--exit loop.
+        Set m to m-1 
+If m = 0, the target is nott in the list.
+
+A level-m skip-list can hold between 2^(m-1) and 2^m - 1 items
+
