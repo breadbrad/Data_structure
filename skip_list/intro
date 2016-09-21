@@ -8,5 +8,5 @@ while m > 0
         Set m to m-1 
 If m = 0, the target is nott in the list.
 
-A level-m skip-list can hold between 2^(m-1) and 2^m - 1 items
+A level-m skip-list can hold between 2^(m-1) and 2^m - 1 items.
 
