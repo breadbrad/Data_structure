@@ -1,4 +1,6 @@
+Probabilistic data structure..
 The level of a skip-list is defined as its highest node level
+
 
 Searching 
 Let m be the higest-level node
