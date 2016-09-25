@@ -1,0 +1,35 @@
+Two representation of graphs are most common 
+- Edges are represented by an array of lists called "adjacency lists",
+  where each list store the vertices adjacent to a particular vertex.
+- Edges are represented by a two-demensional array,
+  called an "adjacency matrix", with |V| rows and |V| columns.
+
+-- Adjacency List
+-> array of lists 
+-> store a reference to the Edge(source, destination, weight) 
+=> Edge(s, e, w) must be stored because weighted graphs can have differenet values for weights
+
+- For an undirected graph, symmetric entries are required. 
+
+
+-- Adjacency matrix 
+-> uses a two-dimensional array
+-> 1 for an edge and 0 for no egde.
+
+Density of a graph = |E| / |V|^2
+
+Dense graph -> |E| is O(|V|^2)
+Sparse graph -> |E| is O(|V|)
+
+dense graph -> adjacency matrix would be good
+sparse graph -> adjacency list would be good 
+
+* Storage efficiency
+storage required -> proportional to |V|^2
+
+sparse graph -> a lot of wasted sapce in the adjacency matrix
+             -> adjacency list => only the adjacent edges are stored 
+
+each element in adjacency list -> need ~4 times of adjacency matrix
+
+
