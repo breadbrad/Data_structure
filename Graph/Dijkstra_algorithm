@@ -1,0 +1,28 @@
+/** 
+For Dijkstra's algorithm,
+two sets S and V-S
+and two arrays, d and p are needed 
+
+S -> vertices for which we have computed the shortest distance 
+V-S -> vertices that we still need to process 
+
+d[v] -> shortest distance from s to v 
+p[v] -> predecessor of v in the path from s to v 
+*/
+
+Initialize S with the start vertex, s, and V-S with the remaining vertices. 
+for all v in V-S
+        Set p[v] to s.
+        if there is an egde(s,v)
+                Set d[v] to w(s,v).
+        else
+                Set d[v] to INF.
+while V-S is not empty
+        for all u in V-S, find the smallest d[u].
+        Remove u form V-S and add u to S.
+        for all v adjacent to u in V-S
+                if d[u] + w(u,v) is less than d[v].
+                        Set d[v] to d[u] + w(u,v).
+                        Set p[v] to u.
+O(|V|^2) 
+
