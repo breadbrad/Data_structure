@@ -1,0 +1,20 @@
+Initialize S with the start vertex, s, and V-S with the remaining vertices.
+
+d[v] contains the length of the shortest know edge from a vertex in S to the vertex v, while v is a member of V-S
+p[v] is the source vertex of this shortes edge.
+
+for all v in V-S
+        Set p[v] to s.
+        if there is an edge (s, v)
+                Set d[v] to w(s, v).
+        else
+                Set d[v] to w(s, v) 
+while V-S is not empty
+        for all u in V-S, find the smallest d[u].
+        Remove u from V-S and add it to S.
+        Insert the edge (u, p[u]) into the spanning tree.
+        for all v in V-S
+                if w(u, v) < d[v]
+                        Set d[v] to w(u, v)
+                        Set p[v] to u.
+                
